@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CRUD Pet Hotel</title>
+    <link rel="stylesheet" href="server/public/styles/styles.css">
+    <script src="jQuery.js" charset="utf-8"></script>
+    <script src="client.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="topOfPage">
+      <h2>Owners and Pets</h2>
+    <a href="#">Click for Visits</a>
+    </div>
+
+    <form id="ownerRegistrationForm">
+      <label for="ownerFirstName">First Name: </label>
+      <input type="text" id="ownerFirstNameInput" placeholder="Owner First Name"></input>
+      <label for="ownerLastName">Last Name: </label>
+      <input type="text" id="ownderLastNameInput" placeholder="Owner Last Name"></input>
+      <button type="button" id="regsiterButton">Register</button>
+    </form>
+    <h2>Pets</h2>
+    <form action="/#">
+      <label for="ownersDropdown">Owner Name</label>
+      <select id="ownersDropdown">
+        <option value="owner1">Owner1</option>
+        <option value="owner2">Owner2</option>
+        <option value="owner3">Owner3</option>
+        <option value="owner4">Owner4</option>
+      </select>
+      <label for="petName">Pet Name: </label>
+      <input type="text" id="ownerFirstNameInput" placeholder="Pet Name"></input>
+      <label for="petColor">Color: </label>
+      <input type="text" id="ownderLastNameInput" placeholder="Pet Color"></input>
+      <label for="petBreed">Breed: </label>
+      <input type="text" id="petBreed" placeholder="Pet Breed">
+      <button type="button" id="addPetButton">Add Pet</button>
+    </form>
+    <section id="petsDisplaySection">
+      <table id="petsDisplayTable">
+        <tr>
+          <th>Owner</th>
+          <th>Pet</th>
+          <th>Breed</th>
+          <th>Color</th>
+          <th>Update</th>
+          <th>Delete</th>
+          <th>Check In/Out</th>
+        </tr>
+        <tr>
+          <td>Tim</td>
+          <td><input id="petsDisplayName" name="" value="Fido"></td>
+          <td><input type="text" id="petsDisplayBreed" value="Terrier"></td>
+          <td><input type="text" id="petsDisplayColor" value="White"></td>
+          <td><button type="button" class="updateButton">Update</button></td>
+          <td><button type="button" class="deleteButton">Delete</button></td>
+          <td><button type="button" class="checkInOutButton">In/Out</button></td>
+        </tr>
+</table>
+    </section>
+
+  </body>
+</html>
