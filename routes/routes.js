@@ -29,33 +29,44 @@ router.post('/registration', function(req, res){
           res.sendStatus(500);
         } else {
           res.send(200);
-        }
-      });
-    }
-  });
-});
+        }  // NOTE: FOR: else
+      });  // NOTE: FOR: client.query + function.error
+    }  // NOTE: FOR: else
+  });  // NOTE: FOR: pool.connect
+});  // NOTE: FOR: router.post
 
 //PHIL SECTION
 
-// // add pet to table in database
-// router.post('/addPet', function(req, res){
-//   pool.connect(function(errorConnectingToDatabase, client, done){
-//     if(errorConnectingToDatabase) {
-//       console.log('Error connecting to database: ', errorConnectingToDatabase);
-//       res.sendStatus(500);
-//     } else {
-//       client.query('SELECT * FROM "books";', function(errorMakingQuery, result){
-//         done();
-//         if(errorMakingQuery) {
-//           console.log('Error making the database query: ', errorMakingQuery);
-//           res.sendStatus(500);
-//         } else {
-//           res.send(result.rows);
-//         }
-//       });
-//     }
-//   });
-// });
+
+
+
+// add pet to table in database
+router.post('/addPet', function(req, res){
+  var addPet = req.body
+  console.log('add Pet working: ', addPet);
+  pool.connect(function(errorConnectingToDatabase, client, done){
+    if(errorConnectingToDatabase) {
+      console.log('Error connecting to database: ', errorConnectingToDatabase);
+      res.sendStatus(500);
+    } else {
+      client.query('INSERT INTO pets (name, color, breed) VALUES ($1, $2, $3);', // match table columns
+      [addPet.petName, addPet.petColor, addPet.petBreed], // match variable created for ajax-post-data
+      function(errorMakingQuery, result)
+      // client.query('INSERT INTO pets (name, color, breed) VALUES ($1, $2, $3);', // match table columns
+      // [addPet.petNameInput, addPet.petColorInput, addPet.petBreedInput], // match ajax data
+      // function(errorMakingQuery, result)
+      {
+        done();
+        if(errorMakingQuery) {
+          console.log('Error making the database query: ', errorMakingQuery);
+          res.sendStatus(500);
+        } else {
+          res.send(result.rows);
+        }  // NOTE: FOR: else
+      });  // NOTE: FOR: client.query + function.error
+    }  // NOTE: FOR: else
+  });  // NOTE: FOR: pool.connect
+});  // NOTE: FOR: router.post
 
 
 //END PHIL SECTION

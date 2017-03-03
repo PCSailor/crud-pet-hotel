@@ -42,26 +42,23 @@ $.ajax({
 
 // NOTE: FOR: $('#registerButton').on('click', function(){
 //////////////// NOTE: Pet Details
-// $('#addPetButton').on('click', function(){
-//   console.log('#addPetButton clicked');
-// var newPet = {
-//   pet: $('petNameInput').val(),
-//   breed: $('petBreedInput').val(),
-//   color: $('petColorInput').val()
-// }
-// $.ajax({
-//   type: 'POST',
-//   url: '/addPet',
-//   data: newPet;
-
-// )} // NOTE: FOR: $('#addPetButton').on('click', function(){
-// // TODO: function for ajax POST
-// // $.ajax({
-// //   type: 'POST'
-// //
-// //
-// // })
-
+$('#addPetButton').on('click', function(){
+  console.log('#addPetButton clicked');
+var newPet = {
+  petName: $('#petNameInput').val(),
+  petColor: $('#petColorInput').val(),
+  petBreed: $('#petBreedInput').val()
+}
+console.log(newPet);
+$.ajax({
+  type: 'POST',
+  url: '/pets/addPet',
+  data: newPet,
+  success: function(response){
+    console.log('add pet response: ', response);
+  }
+}); // NOTE: FOR: #addPetButton').on('click'
+});
 //END PHIL SECTION
 
 //KRIS SECTION
