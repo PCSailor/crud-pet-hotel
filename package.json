@@ -4,7 +4,8 @@
   "description": "Assignment :: CRUD Up Pet Hotel Assignment Details Uncompleted CRUD Up Pet Hotel Your team has started a new business in Uptown for dog-enthusiasts that also need to vacation without their beloved pets. You will be using Trello to track your progress on this application. Copy this Trello Board to get started. You can copy this board by creating a Trello account, clicking show menu, selecting more, and selecting Copy Board. As an MVP, you will create an application that allows owners to •\tcheck in their pet •\tcheck out their pet •\tupdate their pet's info •\tremove their pet altogether You'll use CRUD to make this happen. IMPORTANT: Please include a database.txt file in your submitted Git repo that has all the queries you used to create your database and tables. Implementation Details Guidance on how to build your app. Database Tables Create the following tables in your phi database. Don't forget to add your primary and foreign keys! Table 1: Owners Because owners can have multiple pets, it's best to include this in a separate table. Columns •\tfirst name •\tlast name Table 2: Pets Remember that pets must belong to an owner. Columns •\tname •\tbreed •\tcolor",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
