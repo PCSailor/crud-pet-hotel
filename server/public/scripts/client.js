@@ -71,7 +71,23 @@ $.ajax({
 
 //TOM SECTION
 
-$('#ownersDropdown')
+
+// appends <option> elements for the drop down for each owner record returned from the server
+
+$.ajax({
+    type: "GET",
+    url: "/pets/getOwnerNames",
+    success: function(response){
+      for (var i = 0; i < response.length; i++) {
+        $('#ownersDropdown').append('<option data-petId="'+ response[i].id+'">'+
+        response[i].first_name +
+        ' '+ response[i].last_name+'</option>'
+      } // end FOR loop
+    }//end suxcess function
+  });//end ajax for /pets/getOwnerNames
+
+
+
 
 
 //END TOM SECTION
