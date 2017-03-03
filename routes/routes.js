@@ -14,7 +14,7 @@ var pool = new pg.Pool(config);
 // add owner first and last name to database
 router.post('/registration', function(req, res){
   var newOwner = req.body;
-  console.log('registration url working');
+  console.log('registration url working', newOwner);
   pool.connect(function(errorConnectingToDatabase, client, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to database: ', errorConnectingToDatabase);

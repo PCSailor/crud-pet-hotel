@@ -6,16 +6,16 @@ console.log('jQuery Sourced');
 
 // TODO: function for ajax GET
 
-$.ajax({
-type: 'GET',
-url: /pets,
-success: function(response) {
-    console.log('/pets response: ', response);
-},
-error: function(error){
-  console.log('Ajax-GET failed', error);
-}
-}) // NOTE: FOR: Ajax-GET
+// $.ajax({
+// type: 'GET',
+// url: '/pets',
+// success: function(response) {
+//     console.log('/pets response: ', response);
+// },
+// error: function(error){
+//   console.log('Ajax-GET failed', error);
+// }
+// }) // NOTE: FOR: Ajax-GET
 
 
 
@@ -23,22 +23,22 @@ error: function(error){
 // function for ajax POST
 $('#registerButton').on('click', function(){
   console.log('#registerButton clicked');
-var newOwner {
-  firstName: $('ownerFirstNameInput').val(),
-  lastName: $('ownerLastNameInput').val()
+var newOwner = {
+  firstName: $('#ownerFirstNameInput').val(),
+  lastName: $('#ownerLastNameInput').val()
 }
 $.ajax({
-  type: 'POST'
-  url:'/pets/registration',
+  type: 'POST',
+  url:'pets/registration',
   data: newOwner,
   success: function(response){
     console.log('ajax-registration: ', response);
-  }
-  error: function(error){
+  },
+  error: function(response){
     console.log('ajax-registration: ', response);
   }
 })
-}) // NOTE: FOR: $('#registerButton').on('click', function(){
+}); // NOTE: FOR: $('#registerButton').on('click', function(){
 //////////////// NOTE: Pet Details
 // $('#addPetButton').on('click', function(){
 //   console.log('#addPetButton clicked');
@@ -60,4 +60,4 @@ $.ajax({
 // //
 // // })
 //
-// }) // NOTE: FOR: $(function(){
+}); // NOTE: FOR: $(function(){
