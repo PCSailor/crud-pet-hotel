@@ -8,8 +8,9 @@ console.log('jQuery Sourced');
 
 $.ajax({
 type: 'GET',
-url: /namesuccess: function(response) {
-    console.log('ajax-GET response: ', response);
+url: /pets,
+success: function(response) {
+    console.log('/pets response: ', response);
 },
 error: function(error){
   console.log('Ajax-GET failed', error);
@@ -28,8 +29,7 @@ var newOwner {
 }
 $.ajax({
   type: 'POST'
-
-  url:   // TODO: ,'/registration',
+  url:'/pets/registration',
   data: newOwner,
   success: function(response){
     console.log('ajax-registration: ', response);
@@ -40,24 +40,24 @@ $.ajax({
 })
 }) // NOTE: FOR: $('#registerButton').on('click', function(){
 //////////////// NOTE: Pet Details
-$('#addPetButton').on('click', function(){
-  console.log('#addPetButton clicked');
-var newPet = {
-  pet: $('petNameInput').val(),
-  breed: $('petBreedInput').val(),
-  color: $('petColorInput').val()
-}
-$.ajax({
-  type: 'POST',
-  url: '/addPet',
-  data: newPet;
-
-)} // NOTE: FOR: $('#addPetButton').on('click', function(){
-// TODO: function for ajax POST
+// $('#addPetButton').on('click', function(){
+//   console.log('#addPetButton clicked');
+// var newPet = {
+//   pet: $('petNameInput').val(),
+//   breed: $('petBreedInput').val(),
+//   color: $('petColorInput').val()
+// }
 // $.ajax({
-//   type: 'POST'
-//
-//
-// })
+//   type: 'POST',
+//   url: '/addPet',
+//   data: newPet;
 
-}) // NOTE: FOR: $(function(){
+// )} // NOTE: FOR: $('#addPetButton').on('click', function(){
+// // TODO: function for ajax POST
+// // $.ajax({
+// //   type: 'POST'
+// //
+// //
+// // })
+//
+// }) // NOTE: FOR: $(function(){
