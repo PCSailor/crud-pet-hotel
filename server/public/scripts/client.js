@@ -3,8 +3,7 @@ console.log('JS Sourced');
 $(function(){
 console.log('jQuery Sourced');
 
-
-// TODO: function for ajax GET
+// SAM
 
 // $.ajax({
 // type: 'GET',
@@ -18,7 +17,7 @@ console.log('jQuery Sourced');
 // }) // NOTE: FOR: Ajax-GET
 
 
-
+//END SAM SECTIOn
 //////////////// NOTE: Owner Name
 // function for ajax POST
 $('#registerButton').on('click', function(){
@@ -38,7 +37,10 @@ $.ajax({
     console.log('ajax-registration: ', response);
   }
 })
-}); // NOTE: FOR: $('#registerButton').on('click', function(){
+});
+//PHIL SECTION
+
+// NOTE: FOR: $('#registerButton').on('click', function(){
 //////////////// NOTE: Pet Details
 // $('#addPetButton').on('click', function(){
 //   console.log('#addPetButton clicked');
@@ -59,5 +61,15 @@ $.ajax({
 // //
 // //
 // // })
-//
+
+//END PHIL SECTION
+
+//KRIS SECTION
+
+
+//END KRIS SECTION
+
+//TOM SECTION
+
+//END TOM SECTION
 }); // NOTE: FOR: $(function(){

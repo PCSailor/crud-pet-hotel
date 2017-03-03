@@ -35,6 +35,8 @@ router.post('/registration', function(req, res){
   });
 });
 
+//PHIL SECTION
+
 // // add pet to table in database
 // router.post('/addPet', function(req, res){
 //   pool.connect(function(errorConnectingToDatabase, client, done){
@@ -54,7 +56,11 @@ router.post('/registration', function(req, res){
 //     }
 //   });
 // });
-//
+
+
+//END PHIL SECTION
+
+//KRIS SECTION
 // // update pet in pets table in database
 // router.put('/updatePet', function(req, res){
 //   pool.connect(function(errorConnectingToDatabase, client, done){
@@ -94,7 +100,17 @@ router.post('/registration', function(req, res){
 //     }
 //   });
 // });
-//
+
+//END KRIS SECTION
+
+// TOM SECTION
+
+
+// END TOM SECTION
+
+//SAM SECTION
+
+//END SAM SECTIOn
 // //sends current date to database when pet is checked in
 // router.post('/checkIn', function(req, res){
 //   pool.connect(function(errorConnectingToDatabase, client, done){
