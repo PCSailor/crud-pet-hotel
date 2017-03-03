@@ -4,17 +4,37 @@ $(function(){
 console.log('jQuery Sourced');
 
 // SAM
+getAndDisplayOwnersAndPets();
+function getAndDisplayOwnersAndPets(){
+  $.ajax({
+  type: 'GET',
+  url: '/pets/data',
+  success: function(response) {
+      console.log(response);
+      var infoToAppend = '';
+      for (var i = 0; i < response.length; i++) {
+        var inOrOut = 'IN'
+        if (response[i].check_in !== null){
+          inOrOut = 'OUT';
+        };
+        infoToAppend += '<tr data-petID="' + response[i].pet_id +'">' +
+                        '<td>' + response[i].first_name + ' ' + response[i].last_name + '</td>' +
+                        '<td><input value="' + response[i].name + '" class="petsDisplayName"></td>' +
+                        '<td><input value="' + response[i].breed + '" class="petsDisplayBreed"></td>' +
+                        '<td><input value="' + response[i].color + '" class="petsDisplayColor"></td>' +
+                        '<td><button class="updateButton">GO</button></td>' +
+                        '<td><button class="deleteButton">GO</button></td>' +
+                        '<td><button class="checkInOutButton">'+ inOrOut + '</button></td></tr>';
 
-// $.ajax({
-// type: 'GET',
-// url: '/pets',
-// success: function(response) {
-//     console.log('/pets response: ', response);
-// },
-// error: function(error){
-//   console.log('Ajax-GET failed', error);
-// }
-// }) // NOTE: FOR: Ajax-GET
+      };
+      $('#petsDisplayTable').append(infoToAppend)
+  },
+  error: function(error){
+    console.log('Ajax-GET failed', error);
+  }
+  })
+} //end get pets and owners function
+
 
 
 //END SAM SECTIOn

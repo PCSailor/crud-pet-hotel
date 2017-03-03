@@ -109,7 +109,26 @@ router.post('/registration', function(req, res){
 // END TOM SECTION
 
 //SAM SECTION
-
+router.get('/data', function(req, res){
+  console.log('in pets/data');
+  pool.connect(function(errorConnectingToDatabase, client, done){
+    if(errorConnectingToDatabase) {
+      console.log('Error connecting to database: ', errorConnectingToDatabase);
+      res.sendStatus(500);
+    } else {
+      client.query('SELECT * FROM owners JOIN pets on owners.id=pets.owner_id JOIN visits on pets.id=visits.pet_id;',
+      function(errorMakingQuery, result){
+        done();
+        if(errorMakingQuery) {
+          console.log('Error getting data from database:', errorMakingQuery);
+          res.sendStatus(500);
+        } else {
+          res.send(result.rows);
+        }
+      });
+    }
+  });
+}); //end router.get
 //END SAM SECTIOn
 // //sends current date to database when pet is checked in
 // router.post('/checkIn', function(req, res){

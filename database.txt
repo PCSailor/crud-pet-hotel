@@ -12,8 +12,8 @@ owner_id int REFERENCES owners);
 
 CREATE TABLE visits(
 id SERIAL PRIMARY KEY,
-check_in DATE NOT NULL,
-check_out DATE NOT NULL,
+check_in DATE,
+check_out DATE,
 pet_id int REFERENCES pets);
 
 INSERT INTO owners (first_name,last_name)
